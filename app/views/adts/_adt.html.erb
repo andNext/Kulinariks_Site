@@ -1,0 +1,15 @@
+<!--Партиал для отображения одного объявления -->
+<li>
+
+  <span class="about"><%= adt.about%></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(adt.created_at) %> ago.
+  </span>
+
+  <!--ссылка для удаления объявления -->
+  <% if current_user?(adt.user) %>
+    <%= link_to "delete", adt, method: :delete,
+                                     data: { confirm: "Вы уверены?" },
+                                     title: adt.about %>
+  <% end %>
+</li>

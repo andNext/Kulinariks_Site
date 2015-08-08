@@ -1,0 +1,18 @@
+<% provide(:title, 'Создание объявления') %>
+<div class="row">
+    <aside class="span4">
+      <section>
+      <!--вывод кратного профиля пользователя -->
+        <%= render 'shared/user_info' %>
+      </section> 
+      <section>
+      <!--формы для заполнения объявления -->
+        <%= render 'shared/adt_form' %>
+      </section>
+    </aside>
+    <!--ленты объявлений -->
+    <div class="span8">
+      <h3>Мои объявления</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>

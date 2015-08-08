@@ -1,0 +1,20 @@
+<% provide(:title, "Вход") %>
+<h1>Представьтесь, пожалуйста</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <!--генерация форм ввода для входа на сайт(password_field-скрывает текст звездочками)-->
+    <%= form_for(:session, url: sessions_path) do |f| %>
+
+      <%= f.label :email, "Email"%>
+      <%= f.text_field :email %>
+
+      <%= f.label :password, "Пароль" %>
+      <%= f.password_field :password %>
+
+      <%= f.submit "Войти", class: "btn btn-large btn-primary" %>
+    <% end %>
+    <!-- ссылка на регистрацию для нового пользователя -->
+    <p>Впервые у нас? <%= link_to "Зарегистрироваться!", signup_path %></p>
+  </div>
+</div>

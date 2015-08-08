@@ -1,0 +1,24 @@
+<!--представление страницы пользователя-->
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+      	<!--аватарка пользователя, использую Gravatar-->
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+
+  <!--отображение объявлений пользователя -->
+  <div class="span8">
+    <% if @user.adts.any? %>
+      <h3>Объявления(<%= @user.adts.count %>)</h3>
+      <ul class="adts">
+        <%= render @adts %>
+      </ul>
+      <%= will_paginate @adts %>
+    <% end %>
+  </div>
+</div>

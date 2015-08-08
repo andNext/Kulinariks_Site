@@ -1,0 +1,29 @@
+<% provide(:title, 'Регистрация') %>
+<h1>Быстрая регистрация</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+  	<!--генерация форм ввода для регистрации(password_field-скрывает текст звездочками)-->
+    <%= form_for(@user) do |f| %>
+   	  <!--отображение сообщений об ошибках в форме регистрации -->
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :name, "Ваше имя" %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email, "Email" %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password, "Пароль" %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Подтверждение пароля" %>
+      <%= f.password_field :password_confirmation %>
+      <div class="center">
+      <%= f.submit "Зарегистрироваться", class: "btn btn-large btn-primary" %>
+      </div>
+      <%= f.label :name, "Нажимая кнопку 'зарегистрироваться' вы обязуетесь соблюдать правила сайта, в частности: не использовать ненормативную лексику, а также не рекламировать здесь свои товары и услуги отличные от тематики данного сайта." %>
+      
+    <% end %>
+  </div>
+</div>

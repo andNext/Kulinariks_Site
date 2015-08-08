@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  about: MyString
+  user_id: 1
+  cost: 1
+  spare: MyString
+  marka: MyString
+  city: MyString
+
+two:
+  about: MyString
+  user_id: 1
+  cost: 1
+  spare: MyString
+  marka: MyString
+  city: MyString

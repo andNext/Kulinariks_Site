@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <!--шаблон title-->
+	  <title><%= full_title(yield(:title)) %></title>
+	  <!-- включение каскадных таблиц стиля -->
+	   <%= stylesheet_link_tag "application", media: "all",
+                                           "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <!-- если IE -->
+    <%= render 'layouts/shim' %>
+	</head>
+
+	<body>
+		<!--Шапка сайта -->
+		<%= render 'layouts/header' %>
+
+		<!-- контент страниц, оценка -->
+		<div class="container">
+     		 <% flash.each do |key, value| %>
+        		<div class="alert alert-<%= key %>"><%= value %></div>
+      		 <% end %>
+      	<%= yield %>
+		<!-- подвал сайта -->
+		<%= render 'layouts/footer' %>
+		<!-- отладочная информация
+		<%= debug(params) if Rails.env.development? %>-->
+		</div>
+	</body>
+</html>
